@@ -1,2 +1,7 @@
 pandas
-fastparquet
+scikit-learn
+nltk
+pyarrow
+pytest
+pytest-mock
+pytest-cov
