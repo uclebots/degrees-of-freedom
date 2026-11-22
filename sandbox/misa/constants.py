@@ -1,0 +1,1 @@
+DATABASE_PATH = "../../Conicet_digital_11336_235509/contextualized_hate_speech_DATA"

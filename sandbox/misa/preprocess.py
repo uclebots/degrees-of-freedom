@@ -1,5 +1,7 @@
 _SPACE = " "
+_HASH = "#"
 _MENTION_START = "@"
+_WORD_ENDS = (_SPACE, _HASH)
 
 class MentionsRemover:
     def run(self, text: str) -> str:
@@ -13,16 +15,14 @@ class MentionsRemover:
             str: The text with mentions removed.
         """
         res = ""
-        prev_char = _SPACE
         mention = 0
         for char in text:
             if mention:
                 mention += 1
-            if char == _MENTION_START and prev_char == _SPACE:
+            if char == _MENTION_START:
                 mention = 1
-            if mention>1 and prev_char == _SPACE:
+            if mention>1 and char in _WORD_ENDS:
                 mention = 0
             if not mention:
                 res += char
-            prev_char = char
-        return res
+        return res.strip()

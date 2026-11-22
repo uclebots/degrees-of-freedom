@@ -21,4 +21,5 @@ def test_constructor(mocker, sample_dataframe):
         f.stem = "dev"
 
         mocker.patch("misa.dataaccess.Path.glob", return_value=[f])
-        assert CommentsDataSet("./test").data_frames["dev"].equals(sample_dataframe)
+        assert CommentsDataSet("./test").datasets["dev"].raw().equals(sample_dataframe)
+        
