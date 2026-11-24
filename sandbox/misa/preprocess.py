@@ -1,7 +1,13 @@
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
 _SPACE = " "
 _HASH = "#"
 _MENTION_START = "@"
 _WORD_ENDS = (_SPACE, _HASH)
+
+nltk.download('stopwords')
 
 class MentionsRemover:
     def run(self, text: str) -> str:
@@ -26,3 +32,12 @@ class MentionsRemover:
             if not mention:
                 res += char
         return res.strip()
+    
+class StopWordsRemover:
+    def __init__(self):
+        self.stop_words = set(stopwords.words('spanish'))-set(["no", "ni", "sin"])
+
+    def run(self, text):
+        tokens = word_tokenize(text)
+        filtered_tokens = [word for word in tokens if word.lower() not in self.stop_words]
+        return " ".join(filtered_tokens)
