@@ -34,14 +34,9 @@ Como etapa previa a la aplicación de técnicas de clasificación automática pa
 1. Eliminar espacios y comillas
 1. Eliminar vocales repetidas (ej. amooooor)
 1. Reemplazar emoticones por palabras que los representen (ej.. reemplazar :) con sonrisa)
-1. Reemplazar negaciones (i.e., replace can’t, don’t, never
-with not)
-8. Reemplazar slang (i.e., replace
-l8 with late)
-9. Reemplazar variaciones de palabras con su raíz. (i.e., Replace words like
-‘‘great,’’ ‘‘greatly,’’ ‘‘greatest,’’ and ‘‘greater’’ with the
-single word ‘‘great,’’ reducing entropy and improving
-the relevance of the concept of ‘‘great’’)
+1. Reemplazar negaciones (aplica a Español?)
+1. Reemplazar slang
+1. Reemplazar variaciones de palabras con su raíz. 
 
 ## Referencias
 1. Perez, J., Luque, F., Zayat, D., Kondratzky, M., Moro, A., Serrati, P., Zajac, J., Miguel, P., 		Debandi, N., Grabano, A. y Cotik, V. (2023). Assessing the Impact of Contextual 		Information in Hate Speech Detection. IEEE Access.
@@ -51,4 +46,5 @@ https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10076443
 http://hdl.handle.net/11336/235509
 1. When Did Twitter Become X? (2026).\
 https://tweetfull.com/blog/when-did-twitter-become-x-timeline-dates-and-key-changes/
-1. Al-Qablan, T.A., Mohd Noor, M., Al-Betar, M.A. et al. (2023). A survey on sentiment analysis and its applications. Neural Comput & Applic 35, 21567–21601. https://doi.org/10.1007/s00521-023-08941-y
+1. Al-Qablan, T.A., Mohd Noor, M., Al-Betar, M.A. et al. (2023). A survey on sentiment analysis and its applications. Neural Comput & Applic 35, 21567–21601. 
+https://doi.org/10.1007/s00521-023-08941-y
