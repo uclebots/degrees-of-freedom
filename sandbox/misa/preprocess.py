@@ -1,11 +1,15 @@
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from nltk.stem import SnowballStemmer
 
 _SPACE = " "
 _HASH = "#"
 _MENTION_START = "@"
 _WORD_ENDS = (_SPACE, _HASH)
+_LANGUAGE = "spanish"
+_PUNCTUATION = (_HASH, ",", ".", ":", ";", "¿", "?", "!", "¡", "-", "_")
+
 
 nltk.download('stopwords')
 
@@ -35,9 +39,28 @@ class MentionsRemover:
     
 class StopWordsRemover:
     def __init__(self):
-        self.stop_words = set(stopwords.words('spanish'))-set(["no", "ni", "sin"])
+        self.stop_words = set(stopwords.words(_LANGUAGE))-set(["no", "ni", "sin"])
 
     def run(self, text):
         tokens = word_tokenize(text)
         filtered_tokens = [word for word in tokens if word.lower() not in self.stop_words]
         return " ".join(filtered_tokens)
+    
+class PunctuationRemover:
+        
+    def run(self, text):
+        res = []
+        for c in text:
+            if c not in _PUNCTUATION:
+                res.append(c)
+        return "".join(res)
+                
+    
+class WordStemmer:
+    def __init__(self):
+        self.stemmer = SnowballStemmer(_LANGUAGE)
+        
+    def run(self, text):
+        tokens = word_tokenize(text)
+        return " ".join([self.stemmer.stem(word) for word in tokens])
+                

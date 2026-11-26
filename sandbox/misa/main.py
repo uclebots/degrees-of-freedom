@@ -2,10 +2,10 @@ import argparse
 
 from .constants import DATABASE_PATH
 from .dataaccess import CommentsDataSet
-from .preprocess import MentionsRemover, StopWordsRemover
+from .preprocess import MentionsRemover, PunctuationRemover, StopWordsRemover, WordStemmer
 from time import monotonic
 
-_FILTERS = (MentionsRemover, StopWordsRemover)
+_FILTERS = (MentionsRemover, PunctuationRemover, StopWordsRemover, WordStemmer)
 
 def random_comment():
     start = monotonic()    

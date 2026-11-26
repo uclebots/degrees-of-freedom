@@ -2,6 +2,8 @@ pandas
 scikit-learn
 nltk
 pyarrow
+emoji
+demoji
 pytest
 pytest-mock
 pytest-cov
